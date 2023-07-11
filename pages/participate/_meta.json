@@ -1,0 +1,14 @@
+{
+    "mentors": {
+        "title": "Mentors",
+        "theme": {
+            "pagination": true
+          }
+    },
+    "mentees": {
+        "title": "Mentees/Contributors",
+        "theme": {
+            "pagination": true
+          }
+    }
+}
