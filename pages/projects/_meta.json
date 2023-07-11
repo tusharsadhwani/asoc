@@ -1,0 +1,14 @@
+{
+    "browse-projects": {
+        "title": "Browse projects",
+        "theme": {
+            "pagination": true
+          }
+    },
+    "submit-project-proposal": {
+        "title": "Submit project proposal",
+        "theme": {
+            "pagination": true
+          }
+    }
+}
