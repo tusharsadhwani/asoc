@@ -1,6 +1,4 @@
-import Image from 'next/image'
- 
-
+import Image from "next/image";
 
 export default {
   logo: (
@@ -11,6 +9,9 @@ export default {
   project: {
     link: "https://github.com/vyogami/asoc",
   },
-  docsRepositoryBase: 'https://github.com/vyogami/asoc/blob/main'
-  
+  docsRepositoryBase: "https://github.com/vyogami/asoc/blob/main",
+  sidebar: {
+    defaultMenuCollapseLevel: 1,
+    toggleButton: true
+  },
 };
