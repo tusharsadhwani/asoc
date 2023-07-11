@@ -1,3 +1,22 @@
 {
-    "index": "Introduction"
+    "index": "Introduction",
+    "participate": {
+        "title": "Participate",
+        "theme": {
+            "pagination": false
+          }
+    },
+    "guidelines": "Guildelines",
+    "projects": {
+        "title": "Projects",
+        "theme": {
+            "pagination": false
+          }
+    },
+    "faq": "FAQ",
+    "sponsors": "Sponsors",
+    "resources": "Resources",
+    "contact": "Contact US"
+    
+    
 }
