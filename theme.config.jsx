@@ -14,4 +14,9 @@ export default {
     defaultMenuCollapseLevel: 1,
     toggleButton: true
   },
+  head: (
+    <>
+      <link rel='icon' href='/icons/favicon.ico'/>
+    </>
+  )
 };
