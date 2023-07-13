@@ -47,5 +47,15 @@ export default {
       <meta property="og:description" content="ALiAS Summer of code" />
       <link rel='icon' href='/icons/favicon.ico'/>
     </>
-  )
+  ),
+
+  footer: {
+    text: (
+      <span>
+        <a href="https://asetalias.in" target="_blank">
+          Made with ❤️ by ALiAS
+        </a>
+      </span>
+    )
+  }
 };
