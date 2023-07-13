@@ -57,5 +57,9 @@ export default {
         </a>
       </span>
     )
+  },
+
+  search: {
+    placeholder: 'Search',
   }
 };
