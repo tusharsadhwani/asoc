@@ -15,10 +15,10 @@ export default {
   ),
 
   project: {
-    link: "https://github.com/vyogami/asoc",
+    link: "https://github.com/asetalias/asoc",
   },
 
-  docsRepositoryBase: "https://github.com/vyogami/asoc/blob/main",
+  docsRepositoryBase: "https://github.com/asetalias/asoc/blob/main",
 
   sidebar: {
     defaultMenuCollapseLevel: 1,
