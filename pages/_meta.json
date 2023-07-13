@@ -13,7 +13,14 @@
     "faq": "FAQ",
     "sponsors": "Sponsors",
     "resources": "Resources",
-    "contact": "Contact US"
+    "contact": "Contact US",
+
+    "blogs": {
+        "title": "Blogs",
+        "href": "http://asetalias.in/blog/",
+        "type": "page",
+        "newWindow": true
+    }
     
     
 }
