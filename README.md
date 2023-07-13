@@ -1,9 +1,9 @@
 
-<center>
+<p align="center">
     <img width="60" src="public/images/alias.png"/>
     <br>
-    <span style="font-size: 28;"> ASoC </span>
-</center>
+    <h1 align="center"> ASoC </h1>
+</p>
 
 Welcome to the GitHub repository for the ALiAS Summer of Code (ASoC) program! This repository serves as the central hub for all things related to ASoC, including the website, documentation, resources, and more. Here, you'll find the source code for the ASoC website, which is built using [Nextra](https://nextra.site/), a React framework for static websites.
 
