@@ -4,16 +4,10 @@
     "guidelines": "Guidelines",
 
     "participate": {
-        "title": "Participate",
-        "theme": {
-            "pagination": false
-          }
+        "title": "Participate"
     },
     "projects": {
-        "title": "Projects",
-        "theme": {
-            "pagination": false
-          }
+        "title": "Projects"
     },
     
     "faq": "FAQ",
