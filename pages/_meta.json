@@ -1,18 +1,21 @@
 {
     "index": "Introduction",
+
+    "guidelines": "Guildelines",
+
     "participate": {
         "title": "Participate",
         "theme": {
             "pagination": false
           }
     },
-    "guidelines": "Guildelines",
     "projects": {
         "title": "Projects",
         "theme": {
             "pagination": false
           }
     },
+    
     "faq": "FAQ",
     "sponsors": "Sponsors",
     "resources": "Resources",
