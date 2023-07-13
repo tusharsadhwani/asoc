@@ -1,9 +1,16 @@
 import Image from "next/image";
+import { Balsamiq_Sans } from 'next/font/google'
+ 
+const balsamiq = Balsamiq_Sans({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export default {
   logo: (
     <>
-      <Image src="/logos/logo.png" alt="logo" width={160} height={40} />
+      <Image src="/images/alias.svg" alt="logo" width={32} height={32} style={{ marginLeft: '.4em',}}/>
+      <span className={`${balsamiq.className} logo`} style={{ marginLeft: '.4em', marginTop: '.15em'}}> ASoC</span>
     </>
   ),
 
@@ -45,7 +52,7 @@ export default {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta property="og:title" content="ASoC" />
       <meta property="og:description" content="ALiAS Summer of code" />
-      <link rel='icon' href='/icons/favicon.ico'/>
+      <link rel='icon' href='/images/favicon.ico'/>
     </>
   ),
 
@@ -57,5 +64,9 @@ export default {
         </a>
       </span>
     )
+  },
+
+  search: {
+    placeholder: 'Search',
   }
 };

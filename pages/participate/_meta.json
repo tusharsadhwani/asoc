@@ -1,14 +1,8 @@
 {
     "mentors": {
-        "title": "Mentors",
-        "theme": {
-            "pagination": true
-          }
+        "title": "Mentors"
     },
     "mentees": {
-        "title": "Mentees/Contributors",
-        "theme": {
-            "pagination": true
-          }
+        "title": "Mentees/Contributors"
     }
 }
