@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img width="80" src="public/images/alias.png"/>
+    <img width="120" src="public/images/asoc.png"/>
     <br>
     <h1 align="center"> ASoC </h1>
 </p>
