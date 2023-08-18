@@ -4,8 +4,13 @@
     "guidelines": "Guidelines",
 
     "participate": {
+        "display": "hidden"
+    },
+    
+    "mentees": {
         "title": "Participate"
     },
+
     "projects": {
         "title": "Projects"
     },

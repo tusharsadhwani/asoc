@@ -9,7 +9,7 @@ const balsamiq = Balsamiq_Sans({
 export default {
   logo: (
     <>
-      <Image src="/images/alias.svg" alt="logo" width={32} height={32} style={{ marginLeft: '.4em',}}/>
+      <Image src="/images/asoc.png" alt="logo" width={50} height={50} style={{ marginLeft: '.4em',}}/>
       <span className={`${balsamiq.className} logo`} style={{ marginLeft: '.4em', marginTop: '.15em'}}> ASoC</span>
     </>
   ),
