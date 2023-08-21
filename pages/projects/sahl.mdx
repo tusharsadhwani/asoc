@@ -52,12 +52,6 @@ Level: Medium
 Description: `a, b, _ = a_func_which_returns_tuple()`
 For this you would have to do the codegen part using existing opcodes(bytecode instructions). Like TupleGet(tuple_regstiser, index_register, result_register) is an opcode which has the registers with tuple. Index and where to store the result. check handle_tupleget in main.c
 
-### Coroutines shouldn't be passed mutable values
-
-Issue: https://github.com/abooishaaq/Sahl/issues/27
-Level: Easy
-Description: After 3 is done. In this you simply need to check whether a function being called as a coroutine doesn't take a mut object as a parameter
-
 ### String Interpolation
 
 Issue: https://github.com/abooishaaq/Sahl/issues/12
@@ -74,12 +68,6 @@ Implement a parser.
 Codegen.
 add a new instruction to concat strings.
 Add a cast instruction to convert from primitives(int, char, bool, double) to string. Check handle_cast in main.c
-
-### Unit tests for parser
-
-Issue: https://github.com/abooishaaq/Sahl/issues/21
-Level: Easy
-Description: I added some recently. Check them here
 
 ### Modules
 
@@ -122,14 +110,6 @@ Ability to print them like rust's `print(“{:?}”, obj)` does
 If the var is mutable then all the fields of a struct are mutable otherwise not.
 Structs can be stored as tuples in the vm and field access can be TupleGet. (just an idea)
 Monomorphization when print(var_of_type_struct) is called.
-
-### Parse escape sequences in strings
-
-Issue: https://github.com/abooishaaq/Sahl/issues/46
-Level: Medium
-Description:
-All escape sequences supported by c https://en.wikipedia.org/wiki/Escape_sequences_in_C
-You'll have to edit this function https://github.com/abooishaaq/Sahl/blob/master/src/parser.rs#L125-L134
 
 ### Super Instructions
 
