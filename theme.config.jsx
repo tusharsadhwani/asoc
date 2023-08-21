@@ -25,6 +25,16 @@ export default {
       </span>
     </>
   ),
+  themeSwitch: {
+    component() {
+      return () => null;
+    },
+    // useOptions() {
+    //   return {
+    //     dark: "Dark",
+    //   };
+    // },
+  },
 
   project: {
     link: "https://github.com/asetalias/asoc",
@@ -74,3 +84,5 @@ export default {
     placeholder: "Search",
   },
 };
+
+
