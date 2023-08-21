@@ -1,0 +1,294 @@
+# Interpreted: A Python interpreter, written in Python
+
+This is an interpreter created as a teaching exercise, explaining how the Python language works internally.
+
+While it works as it is now, it is missing a lot of Python features, and is pretty far from being “feature complete”. Adding these features is an extremely hands-on way to learn how Python, and programming languages in general, are built and designed.
+
+# About the mentor
+
+Tushar Sadhwani is a Language Engineer at [DeepSource](https://deepsource.com/).
+
+Tushar is a developer, open source contributor, author and speaker.
+
+# Project tasks
+
+## Level: Easy
+
+### **`UnboundLocalError` not implemented**
+
+The interpreter currently doesn't check if a variable is being read before being assigned to in a scope.
+
+It leads to bugs like this:
+
+```python
+x = 10
+
+def f():
+    x = x + 1  # reading the variable from global, but writing in local
+    print(x)
+
+f()
+print(x)
+```
+
+```bash
+$ interpreted asd.py
+11
+10
+```
+
+This should throw `UnboundLocalError` instead.
+
+### **Language feature: `bytes` type**
+
+Currently, strings are supported but bytes are not. Adding a bytes type would mean:
+
+- Tokenizing strings with a `b` prefix
+- Implementing operators (`+`, `*` and `[]`) for bytes.
+
+```python
+a = b'abc'
+print(a)         # b'abc'
+print(a[0])      # 97
+print(a * 2)     # b'abcabc'
+print(a + b'd')  # b'abcd'
+```
+
+### Supporting unicode escapes
+
+Currently, using unicode escapes like `\u1234` and `\U12345678` don't work. They should print `ሴ` and `🙃` respectively.
+
+```python
+print('Hello \U0001F643, this is a unicode character: \u1234')
+# Hello 🙃, this is a unicode character: ሴ
+```
+
+### **Detecting syntax errors due to `return` outside a function**
+
+This will require ✨Semantic Analysis✨
+
+Essentially, the parsed AST will have to be visited by a semantic analyzer, before it is passed to the interpreter.
+
+This semantic analyzer should do 2 things:
+
+- Detect any presence of `return` statements outside of a function
+- Detect any presence of `break` or `continue` outside of a loop
+
+In both cases, we should raise a `SyntaxError`.
+
+### **Language feature: `global` keyword**
+
+Using the `global` keyword helps define the scope of a specific variable inside a function.
+
+For example:
+
+```python
+x = 0
+
+def foo():
+    x = 1
+
+foo()
+print(x)  # still 0
+```
+
+But, using `global`:
+
+```python
+x = 0
+
+def foo():
+    global x  # now, we know to always get/set x from global scope.
+    x = 1
+
+foo()
+print(x)  # 1
+```
+
+### **Comments at the end of file don't work**
+
+Currently, if a file ends in a comment, the tokenizer crashes.
+
+```python
+print("Hi!)
+# this doesn't work
+```
+
+## Level: Medium
+
+### **Language feature: Decorators**
+
+Implementing decorators would be pretty simple.
+
+Adding syntax sugar for:
+
+```python
+@foo
+def function():
+   ...
+```
+
+To mean:
+
+```python
+def function():
+    ...
+
+function = foo(function)
+```
+
+There are some caveats (the variable `function` is not supposed to be defined when the decorator `foo` is running), but essentially that is the feature.
+
+### **Language feature: list, set, dict comprehensions**
+
+Current implementation supports lists, sets and dicts, but it doesn't support their comprehensions.
+
+Code like:
+
+```python
+my_list = [i*2 for i in range(10)]
+my_set = {i*j for i in range(10) for j in range(10)}
+my_dict = {i: i*2 for i in range(10) if i % 2 == 0}
+```
+
+### **Language feature: closures**
+
+Python supports closures.
+
+Closures are a langauge feature where Python is able to access variables from scopes that are outside the local scope.
+
+For example:
+
+```python
+def pattern():
+    i = 0
+
+    def print_stars():
+        print('*' * i)
+
+    while i <= 5:
+        print_stars()
+        i += 1
+
+pattern()
+```
+
+This outputs the following:
+
+```
+*
+**
+***
+****
+*****
+```
+
+`print_stars()` is able to access `i` from from the local variables defined inside `pattern()`.
+
+This currently doesn't work.
+
+### **Better stack traces**
+
+Currently, a crash leads to a stack trace that contains the interpreter code.
+
+Instead of that, emulating a Python stack, and printing a traceback of that would be quite good.
+
+### **Language feature: file I/O with `open()`**
+
+The current interpreter can't interact with the file system, but implementing `open` will solve that.
+
+Support for reading, writing and appending to files will be needed.
+
+```python
+file = open('foo.txt')
+contents = file.read()
+print(contents)
+file.close()
+
+file = open('bar.txt', 'w')
+chars = file.write(contents)
+print("Wrote", chars, "chars")
+file.close()
+```
+
+### **Language feature: file I/O with `open()`**
+
+The current interpreter can't interact with the file system, but implementing `open` will solve that.
+
+Support for reading, writing and appending to files will be needed.
+
+```python
+file = open('foo.txt')
+contents = file.read()
+print(contents)
+file.close()
+
+file = open('bar.txt', 'w')
+chars = file.write(contents)
+print("Wrote", chars, "chars")
+file.close()
+```
+
+### **Language feature: imports**
+
+Imports essentially just run a Python file, while keeping all their variables in a fresh scope.
+
+```python
+import foo  # should create a `foo` object containing all items in `foo.py`
+from foo import bar  # should just import the `bar` object from `foo.py`
+```
+
+When an `import` statement is seen, it should:
+
+- Change the `self.globals` dictionary of the interpreter to a new one
+- Run that file's code
+- Store this `self.globals` in an object, and assign that to the imported name.
+- In case of a `from` import, just that variable should be assigned to the variable
+
+---
+
+There is a change that may be required for this to be
+fully functional, that is every function may have to hold a reference to
+its own global scopre, under `__globals__`. This should be used to look up variable names, instead of the `self.globals` which only holds the main module's global state.
+
+But this change is not critical to the feature and can be added separately.
+
+## Level: Hard
+
+### **Language feature: Classes**
+
+The interpreter currently doesn't support classes.
+
+Classes have a lot of nuance to them, but this specific issue will focus on three main things:
+
+- Object creation, and handling their closures
+- Method calls, and bound methods
+- Various dunder methods like `__init__`, `__add__` and `__call__`.
+
+Just this much will help support a much larger subset of Python.
+
+Naturally, this issue will depend on the addition of closures, via [#3](https://github.com/tusharsadhwani/interpreted/issues/3).
+
+### **Language feature: generators and `yield` keyword**
+
+Generator functions are functions that contain the `yield` keyword.
+
+Generator functions, instead of returning a value, return a `generator` object, which when called with the top level `next()` function, resumes the function and keeps running it until it `yield`s a value, and then pauses its execution.
+
+For example:
+
+```python
+def generator():
+    print("This runs first")
+    yield 1
+    print("This runs in between")
+    yield 2
+    print("This runs last")
+
+gen = generator()
+print(next(gen))
+print(next(gen))
+print(next(gen, 3))
+```
+
+Produces this output:

@@ -1,0 +1,195 @@
+# Sahl - a programming language with channels and coroutines
+
+This is a virtual machine based programming language which is statically typed and has coroutines. As a mentee you'd add features to its frontend and even to its virtual machine.
+
+## About the Mentor
+
+Malik Ammar Faisal is a second year BTech CSE student at Amity Noida.
+
+- Discord: abooishaaq
+- Email: binfaisal.ammar@gmail.com
+
+## Project Tasks
+
+### Ignoring Values with Underscore `_` Identifier
+
+Issue: https://github.com/abooishaaq/Sahl/issues/29
+Level: Easy
+Description: when `_` is used as a variable name, ignore the value like it happens in go and rust. This means no store instruction is generated. This would be useful is tuple destructuring.
+
+### Redundant consts in .bin
+
+Issue: https://github.com/abooishaaq/Sahl/issues/39
+Level: Easy
+Description:
+Right now, every constant encountered during code generation is added to a list and its index in that list is encoded as instruction Const(index, reg). The bytecode file contains all of these constants and they are copied in the register when that Const instruction is encountered.
+This faulty codegen leads to multiple consts in the bytecode file which are the same but replicated. We need to store only the unique constants.
+
+### `mut`modifier in variable declaration and function parameters
+
+Issue: https://github.com/abooishaaq/Sahl/issues/26
+Level: Medium
+Description:  
+All variables would be immutable by default except the one declared with ` let mut`. Also in function parameters `mut` would precede the param type. If a param is a list or map then unless it has been marked mut we can't mutate its elements.
+
+### Tuple Indexing
+
+Issue: https://github.com/abooishaaq/Sahl/issues/44
+Level: Easy
+Description:
+
+```rust
+let tup = a_func_which_returns_tuple()
+let val = tup[0]
+```
+
+For this you would have to do the codegen part using existing opcodes(bytecode instructions). Like TupleGet(tuple_regstiser, index_register, result_register) is an opcode which has the registers with tuple. Index and where to store the result. check handle_tupleget in main.c
+
+### Tuple Destructuring
+
+Issue: https://github.com/abooishaaq/Sahl/issues/28
+Level: Medium
+Description: `a, b, _ = a_func_which_returns_tuple()`
+For this you would have to do the codegen part using existing opcodes(bytecode instructions). Like TupleGet(tuple_regstiser, index_register, result_register) is an opcode which has the registers with tuple. Index and where to store the result. check handle_tupleget in main.c
+
+### Coroutines shouldn't be passed mutable values
+
+Issue: https://github.com/abooishaaq/Sahl/issues/27
+Level: Easy
+Description: After 3 is done. In this you simply need to check whether a function being called as a coroutine doesn't take a mut object as a parameter
+
+### String Interpolation
+
+Issue: https://github.com/abooishaaq/Sahl/issues/12
+Level: Medium
+Description:
+
+```rust
+let a = 101
+print("Sahl $a")
+print("Sahl ${100 + 1}")
+```
+
+Implement a parser.
+Codegen.
+add a new instruction to concat strings.
+Add a cast instruction to convert from primitives(int, char, bool, double) to string. Check handle_cast in main.c
+
+### Unit tests for parser
+
+Issue: https://github.com/abooishaaq/Sahl/issues/21
+Level: Easy
+Description: I added some recently. Check them here
+
+### Modules
+
+Issue: https://github.com/abooishaaq/Sahl/issues/35
+Level: Medium
+Description:
+
+syntax would use `::`
+
+```rust
+import math
+import "../cool" as cool
+
+fun main() {
+     cool::awesome(math::sin(0))
+}
+```
+
+### transpilation to golang
+
+Issue: https://github.com/abooishaaq/Sahl/issues/43
+Level: Medium
+Description: This language is closest to golang in its semantics making golang an ideal choice for transpilation. This also lets us measure how slow it is compared to golang
+
+### Channel types specified as sender or receiver
+
+Issue: https://github.com/abooishaaq/Sahl/issues/45
+Level: Easy
+Description:
+Specify `<-chan<T>  to mean read only channel, and after ->chan<T> to mean write-only channel`
+Add parser for these
+Add semantic check to ensure value isn't written to- a read only or read from a write only.
+
+### Rust like Structs and Enums
+
+Issue: https://github.com/abooishaaq/Sahl/issues/30
+Level: Hard
+Description:
+Ability to print them like rust's `print(“{:?}”, obj)` does
+If the var is mutable then all the fields of a struct are mutable otherwise not.
+Structs can be stored as tuples in the vm and field access can be TupleGet. (just an idea)
+Monomorphization when print(var_of_type_struct) is called.
+
+### Parse escape sequences in strings
+
+Issue: https://github.com/abooishaaq/Sahl/issues/46
+Level: Medium
+Description:
+All escape sequences supported by c https://en.wikipedia.org/wiki/Escape_sequences_in_C
+You'll have to edit this function https://github.com/abooishaaq/Sahl/blob/master/src/parser.rs#L125-L134
+
+### Super Instructions
+
+Issue: https://github.com/abooishaaq/Sahl/issues/47
+Level: Hard
+Description:
+Super Instructions are basically multiple instructions in a single opcode
+They reduce the dispatches and unnecessary work done.
+A few have been added.
+First figure out a super instruction
+You would need to implement a pass in regcode.rs which checks for potential super instruction insertion possibility.
+
+Example:
+
+```rust
+LoadConstIAddStore(var_ix, const_ix). Eliminate 4 instructions:
+Load(var_ix, reg_1)
+Const(const_ix, reg_2)
+IAdd(reg1, reg2, reg_3)
+Store(var_ix, reg_3)
+```
+
+## How fast is this toy language?
+
+As an example the go program below takes almost the same time as samples/chan.Sahl:
+
+`package main`
+
+```rust
+import "sync"
+
+var wg sync.WaitGroup
+
+func sendvals(c chan int, count int, id int) {
+    i := 0
+    for i < count {
+        c <- i
+        i = i + 1
+    }
+    wg.Done()
+}
+
+func recvvals(c chan int, count int, id int) {
+    i := 0
+    for i < count {
+        print(<-c, " - ", id, "\n")
+        i = i + 1
+    }
+    wg.Done()
+}
+
+func main() {
+    i := 0
+    for i < 100 {
+        a := make(chan int, 1000)
+        wg.Add(2)
+        go sendvals(a, 10000, i)
+        go recvvals(a, 10000, i)
+        i = i + 1
+    }
+    wg.Wait()
+}
+```

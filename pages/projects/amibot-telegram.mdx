@@ -1,0 +1,63 @@
+# AmiBot Telegram - a Telegram bot for Amizone
+
+Amibot-tg is a chat bot that provides a faster and more reliable alternative to the Amity University student portal. With Amibot-tg, you can access all your essential information, including your grades, attendance, class schedule, and more, directly from Telegram. Say goodbye to the inconvenience of logging in to the Amizone website and enjoy the convenience of Amibot-tg on Telegram.
+
+## About the Mentors
+
+Achintya is an intern at Aftershoot co. He likes developing in Go and Flutter and recently made an AmiBot app for WearOS watches.
+Manik is a student at Amity, he codes in Python, JavaScript and TypeScript.
+
+## Project Tasks
+
+### Add better logging
+
+Issue: https://github.com/asetalias/amibot-tg/issues/20
+Level: Easy
+Description: We can use the default python logging package here.
+
+### Add units tests
+
+Issue: https://github.com/asetalias/amibot-tg/issues/26
+Level: Easy
+Description: We need some tests to make sure everything is working as intended that run on commit.
+
+### Choose date options for class schedule feature
+
+Issue: https://github.com/asetalias/amibot-tg/issues/29
+Level: Hard
+Description: Refer to [issue](https://github.com/asetalias/amibot-tg/issues/29)
+
+### Show Exam Room No if its available
+
+Issue: https://github.com/asetalias/amibot-tg/issues/33
+Level: Easy
+Description: Currently Exam Schedule command dont show the exam room no. when requested.
+As the go-amizone has been updated with this feature, we can now update the protobuff files and implement it for amibot-tg as well.
+
+### Allow students to schedule daily delivery of class schedules and attendance information
+
+Issue: https://github.com/asetalias/amibot-tg/issues/56
+Level: Medium
+Description: This is a straightforward call of the Class Schedule button scheduled at 6pm
+
+### Add to calender button
+
+Issue: https://github.com/asetalias/amibot-tg/issues/57
+Level: Hard
+Description: Users should have an option to click a button to add their schedule to Google Calendar.
+
+### Add monitoring of performance metrics
+
+Issue: https://github.com/asetalias/amibot-tg/issues/61
+Level: Hard
+Description:
+
+It is critical for us to be able to see how our bot is being used. We should be able to track the following:
+
+- Daily Active Users
+- Monthly Active Users
+- After a request is made:
+  - How long did go-amizone take to process the request
+  - How long did amibot take to process the response from go-amizone
+
+Level: Hard, lots to consider here like where to store the logs, how to access them, do we need a separate API or external service?

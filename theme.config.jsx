@@ -1,18 +1,35 @@
 import Image from "next/image";
-import { Balsamiq_Sans } from 'next/font/google'
- 
+import { Balsamiq_Sans } from "next/font/google";
+
 const balsamiq = Balsamiq_Sans({
-  weight: '400',
-  subsets: ['latin'],
-})
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export default {
   logo: (
     <>
       <Image src="/images/asoc.png" alt="logo" width={50} height={50} style={{ marginLeft: '.4em',}}/>
-      <span className={`${balsamiq.className} logo`} style={{ marginLeft: '.4em', marginTop: '.15em'}}> ASoC</span>
+      <span
+        className={`${balsamiq.className} logo`}
+        style={{ marginLeft: ".4em", marginTop: ".15em" }}
+      >
+        {" "}
+        ASoC
+      </span>
     </>
   ),
+  
+  themeSwitch: {
+    component() {
+      return () => null;
+    },
+    // useOptions() {
+    //   return {
+    //     dark: "Dark",
+    //   };
+    // },
+  },
 
   project: {
     link: "https://github.com/asetalias/asoc",
@@ -22,29 +39,29 @@ export default {
 
   sidebar: {
     defaultMenuCollapseLevel: 1,
-    toggleButton: true
+    toggleButton: true,
   },
 
   useNextSeoProps() {
     return {
-      titleTemplate: '%s - ASoC',
-    }
+      titleTemplate: "%s - ASoC",
+    };
   },
 
   nextThemes: {
-    defaultTheme: 'dark',
+    defaultTheme: "dark",
   },
 
   chat: {
-    link: 'https://discord.gg/KEXGnysX',
-  },  
+    link: "https://discord.gg/KEXGnysX",
+  },
 
   head: (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta property="og:title" content="ASoC" />
       <meta property="og:description" content="ALiAS Summer of code" />
-      <link rel='icon' href='/images/favicon.ico'/>
+      <link rel="icon" href="/images/favicon.ico" />
     </>
   ),
 
@@ -55,10 +72,12 @@ export default {
           Made with ❤️ by ALiAS
         </a>
       </span>
-    )
+    ),
   },
 
   search: {
-    placeholder: 'Search',
-  }
+    placeholder: "Search",
+  },
 };
+
+
