@@ -1,6 +1,6 @@
 # Sahl - a programming language with channels and coroutines
 
-This is a virtual machine based programming language which is statically typed and has coroutines. As a mentee you’d add features to its frontend and even to its virtual machine.
+This is a virtual machine based programming language which is statically typed and has coroutines. As a mentee you'd add features to its frontend and even to its virtual machine.
 
 ## About the Mentor
 
@@ -11,11 +11,11 @@ Malik Ammar Faisal is a second year BTech CSE student at Amity Noida.
 
 ## Project Tasks
 
-### Ignoring Values with Underscore (\_) Identifier
+### Ignoring Values with Underscore `(\_)` Identifier
 
 Issue: https://github.com/abooishaaq/Sahl/issues/29
 Level: Easy
-Description: when \_ is used as a variable name, ignore the value like it happens in go and rust. This means no store instruction is generated. This would be useful is tuple destructuring.
+Description: when `\_` is used as a variable name, ignore the value like it happens in go and rust. This means no store instruction is generated. This would be useful is tuple destructuring.
 
 ### Redundant consts in .bin
 
@@ -30,7 +30,7 @@ This faulty codegen leads to multiple consts in the bytecode file which are the 
 Issue: https://github.com/abooishaaq/Sahl/issues/26
 Level: Medium
 Description:  
-All variables would be immutable by default except the one declared with ` let mut`. Also in function parameters `mut` would precede the param type. If a param is a list or map then unless it has been marked mut we can’t mutate its elements.
+All variables would be immutable by default except the one declared with ` let mut`. Also in function parameters `mut` would precede the param type. If a param is a list or map then unless it has been marked mut we can't mutate its elements.
 
 ### Tuple Indexing
 
@@ -52,11 +52,11 @@ Level: Medium
 Description: `a, b, _ = a_func_which_returns_tuple()`
 For this you would have to do the codegen part using existing opcodes(bytecode instructions). Like TupleGet(tuple_regstiser, index_register, result_register) is an opcode which has the registers with tuple. Index and where to store the result. check handle_tupleget in main.c
 
-### Coroutines shouldn’t be passed mutable values
+### Coroutines shouldn't be passed mutable values
 
 Issue: https://github.com/abooishaaq/Sahl/issues/27
 Level: Easy
-Description: After 3 is done. In this you simply need to check whether a function being called as a coroutine doesn’t take a mut object as a parameter
+Description: After 3 is done. In this you simply need to check whether a function being called as a coroutine doesn't take a mut object as a parameter
 
 ### String Interpolation
 
@@ -111,14 +111,14 @@ Level: Easy
 Description:
 Specify `<-chan<T>  to mean read only channel, and after ->chan<T> to mean write-only channel`
 Add parser for these
-Add semantic check to ensure value isn’t written to- a read only or read from a write only.
+Add semantic check to ensure value isn't written to- a read only or read from a write only.
 
 ### Rust like Structs and Enums
 
 Issue: https://github.com/abooishaaq/Sahl/issues/30
 Level: Hard
 Description:
-Ability to print them like rust’s print(“{:?}”, obj) does
+Ability to print them like rust's `print(“{:?}”, obj)` does
 If the var is mutable then all the fields of a struct are mutable otherwise not.
 Structs can be stored as tuples in the vm and field access can be TupleGet. (just an idea)
 Monomorphization when print(var_of_type_struct) is called.
@@ -129,7 +129,7 @@ Issue: https://github.com/abooishaaq/Sahl/issues/46
 Level: Medium
 Description:
 All escape sequences supported by c https://en.wikipedia.org/wiki/Escape_sequences_in_C
-You’ll have to edit this function https://github.com/abooishaaq/Sahl/blob/master/src/parser.rs#L125-L134
+You'll have to edit this function https://github.com/abooishaaq/Sahl/blob/master/src/parser.rs#L125-L134
 
 ### Super Instructions
 
