@@ -1,4 +1,4 @@
-# ** Go-AmiZone ** 
+# ** Go-AmiZone **
 
 go-amizone is a simple and robust Go library and API server for the Amizone student portal. This library is intended to be used as a self-hosted Go API or as an SDK in your Go application.
 
@@ -11,32 +11,37 @@ Tushar Malik is a polygot programmer with experience in TypeScript, Python, Rust
 ## Project Tasks
 
 ### `Status code: 13 INTERNAL` on `GetExamSchedule`
+
 Issue: https://github.com/ditsuke/go-amizone/issues/46
 Level: Easy
 
 ### Scoped token allocation
+
 Issue: https://github.com/ditsuke/go-amizone/issues/38
 Level: Hard
-Description: 
+Description:
 
 #### Problem
+
 Privacy and security are major concerns with consumers of the go-amizone API.
 
 While on their own, you'd expect consumers to implement at-rest encryption, it is not a primary implementation concern. Even amibot, the largest user today, stores credentials in plaintext. Tokens allocated by go-amizone will reduce the need for at-rest encryption for consumers (but it'd still be recommended)
 Scoped tokens can restrict what a consumer can do, reducing the need for trust. For example if a user wants to use Amibot just to check their class schedules, they should be able to generate a token that's restricted to that use case on Go-amizone's end.
 
 #### Solution
+
 - RPC:
-    - Accepts a user credentials, a set of token usage scopes and an optional expiry date.
-    - Yields a user token for the credentials and the scope set requested. This token must be in a JWT or Paseto form.
+  - Accepts a user credentials, a set of token usage scopes and an optional expiry date.
+  - Yields a user token for the credentials and the scope set requested. This token must be in a JWT or Paseto form.
 - Web page in the vain of the GitHub token generation page
 
 Reference: asetalias/amibot: Discussion about the privacy of the bot
 
 ### [feature] ATPC Placement Information
+
 Issue: https://github.com/ditsuke/go-amizone/issues/33
 Level: Easy
-Description: 
+Description:
 ATPC has a Placement Tab on Amizone where students can register for Internships, Cooperate Events, and Placements. Time to Time Registration for companies regarding Internships, Events, or Placements is updated in Respective tabs. But there is an issue that is
 
 No Notification / Reminder System
@@ -62,14 +67,15 @@ Sub-components:
 
 1. Structs/models that contain meaninful data-points from each of the pages.
 2. Parsers to extract meaninful information from both the pages and store them in the models from step 1.
-2. `amizoneClient` methods (listed above) that retrieve these pages from amizone, use parsers to get useful data and return them.
+3. `amizoneClient` methods (listed above) that retrieve these pages from amizone, use parsers to get useful data and return them.
 
 Reference PR that covers this process for exam results: [#44](https://github.com/ditsuke/go-amizone/pull/44)
 
 ### go-amizone: Add support for faculty page
+
 Issue: https://github.com/ditsuke/go-amizone/issues/17
 Level: Easy
-Description: 
+Description:
 Deliverables:
 
 - Method to list faculties from the

@@ -11,28 +11,40 @@ Tushar Malik is a polygot programmer with experience in TypeScript, Python, Rust
 ## Project Tasks
 
 ### Add additional buttons to check attendance+schedule for the current/previous day
+
 Issue: https://github.com/asetalias/amibot/issues/47
 Level: Easy
+
 #### Problem
+
 Checking attendance and class schedule for the current and previous day is the most commonly used flow in the bot for most users, as it is for me. However, this flow currently requires at least 4 button clicks and waiting for 2 bot responses. Suboptimal!
 Proposed Solution
 Add extra buttons just to trigger these flows. Essentially:
 ![diagram](https://user-images.githubusercontent.com/72784348/261934128-a47db851-350e-4862-aec7-c3557c7486ee.png)
 
 ### Add slash commands as an alternative way to interact with amibot
+
 Issue: https://github.com/asetalias/amibot/issues/46
 Level: Hard
+
 #### The Problem
+
 Buttons are cool and user friendly, but sometimes less than efficient for frequently used flows.
+
 #### Proposed Solution
+
 Slash commands can be a cool alternative to interact with the bot and condense multiple button clicks into a single command.
 
 ### [Feature] Encrypt user credentials at rest
+
 Issue: https://github.com/asetalias/amibot/issues/41
 Level: Medium
+
 #### Problem
+
 We're storing user credentials in plain-text. This is less than ideal as a database breach would render them exposed.
+
 #### Solution
+
 Encrypt these credentials while storing, decrypt them while using. A secure symmetric algorithm like AES-256 should suffice.
 Reference: https://github.com/asetalias/amibot/discussions/35
-
