@@ -1,0 +1,74 @@
+# ** PixelBlaster OS: Custom ROM based on AOSP ** 
+
+Project repositories: https://github.com/PixelBlaster-OS
+
+## About the Mentors
+
+Venkatesh is a Support Technician at Atlassian and a champion of Open Source Software. He loves Android and Linux and is currently a maintainer for AOSP.
+
+## Project Tasks
+
+## ** Blaster Theme Picker **
+
+### Add fragment to show monet settings
+Issue: https://github.com/PixelBlaster-OS/packages_apps_BlasterThemePicker/issues/1
+Level: medium
+Description: 
+- Add a new fragment like the font picker/ icon picker fragment.
+- The fragment will have different switch and seekbaar preferences.
+- Create a dummy fragment. The actual settings will be added later
+
+---
+
+## ** Updater **
+
+Simple application to download and apply OTA packages.
+
+### Add changelog 
+Issue: https://github.com/PixelBlaster-OS/packages_apps_Updater/issues/3
+Level: medium
+Description: 
+- Currently, a hard-coded string is shown whenever a new update is available.
+- Replace the hard-coded string with a changelog fetched from a markdown file stored on a GitHub repo.
+- The markdown should be rendered properly instead of showing raw text.
+
+### Rename and refactor package
+Issue: https://github.com/PixelBlaster-OS/packages_apps_Updater/issues/2
+Level: easy
+Description: 
+- Rename package to com.blaster.Updater
+- Replace all occurrences of lineage OS with PixelBlaster-OS
+- Nuke any unused resources ( strings, drawables, colors, etc. )
+
+### Migrate from RecyclerView to a singular layout
+Issue: https://github.com/PixelBlaster-OS/packages_apps_Updater/issues/1
+Level: medium
+Description: 
+- We will never be providing multiple updates simultaneously so having a RecyclerView is useless.
+- Need to transfer and adapt relevant code from the UpdatesListAdapter to UpdatesActivity.
+- Completely nuke all RecyclerView related code and layouts.
+
+---
+
+## ** PixelBlaster OS Website ** 
+
+### Make device cards flip to show changelog
+Issue: https://github.com/PixelBlaster-OS/PixelBlaster-OS.github.io/issues/4
+Level: medium
+Description: 
+- When a user clicks on a changelog button in a device card, the card should flip to show the latest build's changelog.
+- The changelog should be fetched and rendered from markdown file stored in a github repository.
+
+### Create a blog system
+Issue: https://github.com/PixelBlaster-OS/PixelBlaster-OS.github.io/issues/3
+Level: medium
+Description: 
+- Add a page/card to show blog posts.
+- Blogs should be rendered from markdown files.
+- The design of the blog page should be consistent with the rest of the website.
+- Blogs should be ordered by date and time.
+
+### Fix Responsive design
+Issue: https://github.com/PixelBlaster-OS/PixelBlaster-OS.github.io/issues/2
+Level: Easy
+Description: Fix Responsive design for various screen sizes
