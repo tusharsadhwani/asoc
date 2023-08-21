@@ -1,12 +1,78 @@
-# ** ** 
+# ** Go-AmiZone ** 
 
+go-amizone is a simple and robust Go library and API server for the Amizone student portal. This library is intended to be used as a self-hosted Go API or as an SDK in your Go application.
+
+Project repository: https://github.com/ditsuke/go-amizone
 
 ## About the Mentors
 
+Tushar Malik is a polygot programmer with experience in TypeScript, Python, Rust and Go. He is has worked at various startups and served as a mentor at GSoC for the Joomla! project.
 
 ## Project Tasks
 
-### 
-Issue: 
-Level: 
+### `Status code: 13 INTERNAL` on `GetExamSchedule`
+Issue: https://github.com/ditsuke/go-amizone/issues/46
+Level: Easy
+
+### Scoped token allocation
+Issue: https://github.com/ditsuke/go-amizone/issues/38
+Level: Hard
 Description: 
+
+#### Problem
+Privacy and security are major concerns with consumers of the go-amizone API.
+
+While on their own, you'd expect consumers to implement at-rest encryption, it is not a primary implementation concern. Even amibot, the largest user today, stores credentials in plaintext. Tokens allocated by go-amizone will reduce the need for at-rest encryption for consumers (but it'd still be recommended)
+Scoped tokens can restrict what a consumer can do, reducing the need for trust. For example if a user wants to use Amibot just to check their class schedules, they should be able to generate a token that's restricted to that use case on Go-amizone's end.
+
+#### Solution
+- RPC:
+    - Accepts a user credentials, a set of token usage scopes and an optional expiry date.
+    - Yields a user token for the credentials and the scope set requested. This token must be in a JWT or Paseto form.
+- Web page in the vain of the GitHub token generation page
+
+Reference: asetalias/amibot: Discussion about the privacy of the bot
+
+### [feature] ATPC Placement Information
+Issue: https://github.com/ditsuke/go-amizone/issues/33
+Level: Easy
+Description: 
+ATPC has a Placement Tab on Amizone where students can register for Internships, Cooperate Events, and Placements. Time to Time Registration for companies regarding Internships, Events, or Placements is updated in Respective tabs. But there is an issue that is
+
+No Notification / Reminder System
+There is no System through which a student is notified to register if there are new entries in those tabs and Because of this many students miss great opportunities.
+
+Possible Solution
+
+A Notification / Reminder System in Amibot that will Notify the user whenever there are new entries in ATPC placement tabs. Through Mail id, Whatsapp, or Telegram
+
+Suggestion From my Side:
+
+- Web scraping
+- Notification system (Twilio API)
+- Scheduler like cron
+
+Deliverables for this issue:
+
+- `amizoneClient.getATPCListings()`: returns placement opportunities listed by ATPC
+- `amizoneClient.getCRCListings():` returns placement opportunities listed by ATPC
+- gRPC API endpoints to call these methods over the network
+
+Sub-components:
+
+1. Structs/models that contain meaninful data-points from each of the pages.
+2. Parsers to extract meaninful information from both the pages and store them in the models from step 1.
+2. `amizoneClient` methods (listed above) that retrieve these pages from amizone, use parsers to get useful data and return them.
+
+Reference PR that covers this process for exam results: [#44](https://github.com/ditsuke/go-amizone/pull/44)
+
+### go-amizone: Add support for faculty page
+Issue: https://github.com/ditsuke/go-amizone/issues/17
+Level: Easy
+Description: 
+Deliverables:
+
+- Method to list faculties from the
+- gRPC Endpoint to expose the method to the network.
+
+If you're a newbie to the codebase or Go, refer to [#44](https://github.com/ditsuke/go-amizone/pull/44) which adds similar support for exam results.
