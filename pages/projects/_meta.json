@@ -1,8 +1,8 @@
 {
-    "browse-projects": {
-        "title": "Browse projects"
-    },
-    "submit-project-proposal": {
-        "title": "Submit project proposal"
-    }
+  "browse-projects": {
+    "title": "Browse projects"
+  },
+  "submit-project-proposal": {
+    "title": "Submit project proposal"
+  }
 }

@@ -1,7 +1,7 @@
 {
-    "index": "Introduction",
+  "index": "Introduction",
 
-    "guidelines": "Guidelines",
+  "guidelines": "Guidelines",
 
     "participate": {
         "display": "hidden"
@@ -20,12 +20,15 @@
     "other-programs": "Other Programs",
     "contact-us": "Contact Us",
 
-    "blogs": {
-        "title": "Blogs",
-        "href": "http://asetalias.in/blog/",
-        "type": "page",
-        "newWindow": true
-    }
-    
-    
+  "faq": "FAQ",
+  "sponsors": "Sponsors",
+  "other-programs": "Other Programs",
+  "contact-us": "Contact Us",
+
+  "blogs": {
+    "title": "Blogs",
+    "href": "http://asetalias.in/blog/",
+    "type": "page",
+    "newWindow": true
+  }
 }

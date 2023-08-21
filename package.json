@@ -1,8 +1,19 @@
 {
+  "name": "asoc-website",
+  "scripts": {
+    "lint:js": "eslint --ext \".js\" --ignore-path .gitignore .",
+    "lint:mdx": "eslint --ext \".mdx\" --ignore-path .gitignore .",
+    "lint:prettier": "prettier --check .",
+    "lint": "yarn lint:js && yarn lint:prettier",
+    "lintfix": "prettier --write --list-different . && yarn lint:js --fix"
+  },
   "dependencies": {
+    "eslint": "^8.47.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "next": "^13.4.9",
     "nextra": "^2.9.0",
     "nextra-theme-docs": "^2.9.0",
+    "prettier": "^3.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

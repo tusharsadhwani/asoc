@@ -1,13 +1,21 @@
-import { Card, Cards } from 'nextra/components'
-import Image from "next/image"
+import { Card, Cards } from "nextra/components";
+import Image from "next/image";
 
 # Projects
 
 Welcome to the Projects page of the ALiAS Summer of Code (ASoC) program.
-Here, you can explore a range of open-source projects available for contribution, including ALiAS's homegrown projects and other notable open-source projects. 
+Here, you can explore a range of open-source projects available for contribution, including ALiAS's homegrown projects and other notable open-source projects.
 You also have the opportunity to submit your own project proposal for consideration.
 
 <Cards num={2}>
-  <Card icon={<Image src="/icons/stars.svg" alt="logo" width={24} height={24} />} title="Browse Projects" href="/projects/browse-projects" />
-  <Card icon={<Image src="/icons/stars.svg" alt="logo" width={24} height={24} />} title="Submit Project Proposal" href="/projects/submit-project-proposal" />
+  <Card
+    icon={<Image src="/icons/stars.svg" alt="logo" width={24} height={24} />}
+    title="Browse Projects"
+    href="/projects/browse-projects"
+  />
+  <Card
+    icon={<Image src="/icons/stars.svg" alt="logo" width={24} height={24} />}
+    title="Submit Project Proposal"
+    href="/projects/submit-project-proposal"
+  />
 </Cards>

@@ -1,22 +1,22 @@
 .logo {
-    font-family: var(--font-inter);
-    font-size: 30px;
+  font-family: var(--font-inter);
+  font-size: 30px;
 }
 
 .foss-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin: 1em;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 1em;
 }
 
 .foss {
-    color: var(--text-color);
-    background-color: var(--background-color);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #ffffff; /* white */
   }
-  
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background-color: #ffffff; /* white */
-    }
-  }
+}
