@@ -108,6 +108,15 @@ Organization repository: https://github.com/battlefield-portal-community
                 </details>                
             - <details>
                 <summary>Migrate to  &nbsp;`AbstractUser` &nbsp;&nbsp; <img src="https://img.shields.io/badge/HARD-bd1c1c"></img>&nbsp;<img src="https://img.shields.io/badge/Backend-maroon"></img></summary>
+                
+                When I started this project I made a grave mistake of using default user model for everything, fast forward to today we maintain two models `Users` and `Profiles` which ideally should be one.
+                In this task we will have to migrate every user to an CustomUser model that subclasses from `AbstractUser`. 
+                Tasks
+                - Identify and replace every direct usage of `User` model with `get_user_model`. 
+                - Create a new Custom user and define a relationship with `Profile` model.
+                - Write migrate strategy to migrate all current users to the `AbstractUser` model
+
+                This is the basic overview of the task, a much detailed discussion must take place before starting with task.
                 </details>
             - <details>
                 <summary>Add an Experience logic backup service &nbsp;&nbsp; <img src="https://img.shields.io/badge/HARD-bd1c1c"></img>&nbsp;<img src="https://img.shields.io/badge/Backend-maroon"></img></summary>
