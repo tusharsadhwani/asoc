@@ -72,6 +72,16 @@ Organization repository: https://github.com/battlefield-portal-community
                 </details>
             - <details>
                 <summary>Add Cache headers for Cloudflare to consume &nbsp;&nbsp; <img src="https://img.shields.io/badge/MEDIUM-918719"></img>&nbsp;<img src="https://img.shields.io/badge/Backend-maroon"></img></summary>
+                
+                Cloudflare provides free caching service to all users, but Currently we are not making use of it on the Frontend, 
+                this leads to more requests at server and more cpu cycles.
+
+                we can add caching to Frontend by making use of the `Cache-Control` http header. 
+                In this task you will 
+                - Identify all the points where we can use Cache
+                - Think of an efficient way to add headers for all points
+                - Set cache age accordingly
+                  
                 </details>
             - <details>
                 <summary>Add &nbsp;`Variants`&nbsp; to Experience Model &nbsp;&nbsp; <img src="https://img.shields.io/badge/HARD-bd1c1c"></img>&nbsp;<img src="https://img.shields.io/badge/Frontend-purple"></img>&nbsp;<img src="https://img.shields.io/badge/Backend-maroon"></img></summary>
