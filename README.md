@@ -17,7 +17,7 @@ To get started with the ASoC website locally, follow these steps:
 1. Clone the repository: `git clone https://github.com/asetalias/asoc.git`
 2. Navigate to the project directory: `cd asoc`
 3. Install the dependencies: `yarn install`
-4. Start the development server: `yarn next``
+4. Start the development server: `yarn next`
 5. Open your browser and visit `http://localhost:3000` to view the website.
 
 For more information visit the [Nextra documentation](https://nextra.site/docs/).
