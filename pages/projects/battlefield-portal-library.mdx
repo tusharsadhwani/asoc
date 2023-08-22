@@ -109,6 +109,7 @@ Organization repository: https://github.com/battlefield-portal-community
             - <details>
                 <summary>Migrate to  &nbsp;`AbstractUser` &nbsp;&nbsp; <img src="https://img.shields.io/badge/HARD-bd1c1c"></img>&nbsp;<img src="https://img.shields.io/badge/Backend-maroon"></img></summary>
                 
+                &nbsp;&nbsp;  
                 When I started this project I made a grave mistake of using default user model for everything, fast forward to today we maintain two models `Users` and `Profiles` which ideally should be one.
                 In this task we will have to migrate every user to an CustomUser model that subclasses from `AbstractUser`. 
                 Tasks
@@ -116,10 +117,17 @@ Organization repository: https://github.com/battlefield-portal-community
                 - Create a new Custom user and define a relationship with `Profile` model.
                 - Write migrate strategy to migrate all current users to the `AbstractUser` model
 
-                This is the basic overview of the task, a much detailed discussion must take place before starting with task.
+                **This is the basic overview of the task, a much detailed discussion must take place before starting with task.**
                 </details>
             - <details>
                 <summary>Add an Experience logic backup service &nbsp;&nbsp; <img src="https://img.shields.io/badge/HARD-bd1c1c"></img>&nbsp;<img src="https://img.shields.io/badge/Backend-maroon"></img></summary>
+
+                &nbsp;&nbsp;  
+                Each experience has two things a `Share Code` and a `PlaygroundID`, if a user provides their `PlaygroundID` we can retrieve all information about the experience using [gametools api](https://api.gametools.network/docs),
+
+                Task: create a system or api where a user can provide `PlaygroundID` and we save the playground info and give them back a unique URL using which the user can later retrieve the info
+
+                **This is the basic overview of the task, a much detailed discussion must take place before starting with task.**
                 </details>
             - <details>
                 <summary>Create a per-branch deployment system &nbsp;&nbsp; <img src="https://img.shields.io/badge/DEATH-black"></img>&nbsp;<img src="https://img.shields.io/badge/Backend-maroon"></img></summary>
