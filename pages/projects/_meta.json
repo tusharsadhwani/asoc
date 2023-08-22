@@ -1,8 +1,5 @@
 {
-  "browse-projects": {
-    "title": "Browse projects"
-  },
   "submit-project-proposal": {
-    "title": "Submit project proposal"
+    "display": "hidden"
   }
 }

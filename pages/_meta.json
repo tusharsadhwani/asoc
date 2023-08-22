@@ -3,22 +3,17 @@
 
   "guidelines": "Guidelines",
 
-    "participate": {
-        "display": "hidden"
-    },
-    
-    "mentees": {
-        "title": "Participate"
-    },
+  "participate": {
+    "display": "hidden"
+  },
 
-    "projects": {
-        "title": "Projects"
-    },
-    
-    "faq": "FAQ",
-    "sponsors": "Sponsors",
-    "other-programs": "Other Programs",
-    "contact-us": "Contact Us",
+  "mentees": {
+    "title": "Participate"
+  },
+
+  "projects": {
+    "title": "Projects"
+  },
 
   "faq": "FAQ",
   "sponsors": "Sponsors",
