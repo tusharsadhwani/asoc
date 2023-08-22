@@ -9,7 +9,13 @@ const balsamiq = Balsamiq_Sans({
 export default {
   logo: (
     <>
-      <Image src="/images/asoc.png" alt="logo" width={38} height={38} style={{ marginLeft: '.4em',}}/>
+      <Image
+        src="/images/asoc.png"
+        alt="logo"
+        width={38}
+        height={38}
+        style={{ marginLeft: ".4em" }}
+      />
       <span
         className={`${balsamiq.className} logo`}
         style={{ marginLeft: ".4em", marginTop: ".15em" }}
@@ -19,7 +25,7 @@ export default {
       </span>
     </>
   ),
-  
+
   themeSwitch: {
     component() {
       return () => null;
@@ -67,11 +73,19 @@ export default {
 
   footer: {
     text: (
-      <span>
-        <a href="https://asetalias.in" target="_blank">
-          Made with ❤️ by ALiAS
-        </a>
-      </span>
+      <>
+        <Image
+          src="/images/fossunited-badge.svg"
+          alt="logo"
+          width={150}
+          height={150}
+        />
+        <span style={{ marginLeft: "1em", marginTop: ".2em" }}>
+          <a href="https://asetalias.in" target="_blank">
+            Made with ❤️ by ALiAS
+          </a>
+        </span>
+      </>
     ),
   },
 
@@ -79,5 +93,3 @@ export default {
     placeholder: "Search",
   },
 };
-
-
