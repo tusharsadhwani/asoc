@@ -27,7 +27,15 @@ Organization repository: https://github.com/battlefield-portal-community
                     - The backdrop must hide itself when the menu is closed.
                 </details>        
             - <details>
-                <summary>All images must have good alt tags &nbsp;&nbsp; <img src="https://img.shields.io/badge/EASY-147a2f"></img>&nbsp;<img src="https://img.shields.io/badge/Frontend-purple"></img></summary>
+                <summary>All images must have good alt attribute &nbsp;&nbsp; <img src="https://img.shields.io/badge/EASY-147a2f"></img>&nbsp;<img src="https://img.shields.io/badge/Frontend-purple"></img></summary>
+
+                &nbsp;&nbsp;  
+                As the website is in the process to be compliant of [WCAG 2](https://www.w3.org/WAI/standards-guidelines/wcag/) Standard, We must make sure all the images have good descriptive `alt` attribute in `img` tags
+
+                This task has two parts which will determine the overall scope of the task.
+                - populating `alt` attribute of existing `img` tags.
+                - Writing a [pre-commit](https://pre-commit.com/) hook that makes sure all the `img` tags in a change have good `alt` attribute 
+                    - If you wish to do this too please open a new [issue](https://github.com/battlefield-portal-community/bfportal.gg/issues/new), then this task will be moved to <img src="https://img.shields.io/badge/MEDIUM-918719"></img>
                 </details>        
             - <details>
                 <summary>Create and design template for login cancelled page &nbsp;&nbsp; <img src="https://img.shields.io/badge/EASY-147a2f"></img>&nbsp;<img src="https://img.shields.io/badge/Frontend-purple"></img>&nbsp;<img src="https://img.shields.io/badge/Backend-maroon"></img></summary>
