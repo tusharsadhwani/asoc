@@ -1,21 +1,88 @@
-import { Card, Cards } from "nextra/components";
-import Image from "next/image";
+import { Card, Cards, Callout } from "nextra/components";
 
-# Projects
+# Browse Projects
 
-Welcome to the Projects page of the ALiAS Summer of Code (ASoC) program.
-Here, you can explore a range of open-source projects available for contribution, including ALiAS's homegrown projects and other notable open-source projects.
-You also have the opportunity to submit your own project proposal for consideration.
+In this section, you will find a list of open-source projects that you can contribute to as a mentee.
+Our project selection includes a mix of ALiAS's homegrown projects and other renowned open-source projects.
+Each project is carefully curated to provide a unique learning experience and an opportunity for mentees to make meaningful contributions.
+You can browse through the projects, explore their descriptions, and choose the ones that align with your interests and skills.
+
+---
+  <Callout type="info" emoji="ℹ️">
+    Note: All projects that use Amizone as a backend are only open to the students of Amity University.
+  </Callout>
+
 
 <Cards num={2}>
+  <Card image arrow title="Amigrant" href="/projects/amigrant">
+    <>![Amigrant](/images/projects/white/amigrant_white.png)</>
+  </Card>
+  <Card image arrow title="ALIAS Official Website" href="/projects/alias-website">
+    <>![ALIAS-Official-Website](/images/projects/white/alias_website_w.png)</>
+  </Card>
   <Card
-    icon={<Image src="/icons/stars.svg" alt="logo" width={24} height={24} />}
-    title="Browse Projects"
-    href="/projects/browse-projects"
-  />
+    image
+    arrow
+    title="Go-amizone"
+    href="/projects/go-amizone"
+  >
+    <>![Go-amizone](/images/projects/white/go_amizone_w.png)</>
+  </Card>
   <Card
-    icon={<Image src="/icons/stars.svg" alt="logo" width={24} height={24} />}
-    title="Submit Project Proposal"
-    href="/projects/submit-project-proposal"
-  />
+    image
+    arrow
+    title="AmiVerse"
+    href="/projects/amiverse"
+  >
+    <>![AmiVerse](/images/projects/white/amiverse_white.png)</>
+  </Card>
+  <Card
+    image
+    arrow
+    title="Box-cli-maker"
+    href="/projects/box-cli-maker"
+  >
+    <>![Box-cli-maker](/images/projects/white/box_cli_w.png)</>
+  </Card>
+  <Card
+    image
+    arrow
+    title="Amibot-tg"
+    href="/projects/amibot-telegram"
+  >
+    <>![Amibot-tg](/images/projects/white/amibot_tg_w.png)</>
+  </Card>
+  <Card
+    image
+    arrow
+    title="Amibot-WhatsApp"
+    href="/projects/amibot-whatsapp"
+  >
+    <>![Amibot-WhatsApp](/images/projects/white/amibot_wa_white.png)</>
+  </Card>
+  <Card image arrow title="Amibot-discord" href="/projects/amibot-discord">
+    <>![Amibot-discord](/images/projects/white/amibot_discord_w.png)</>
+  </Card>
+  <Card
+    image
+    arrow
+    title="PixelBlasterOS"
+    href="/projects/pixelblasteros"
+  >
+    <>![PixelBlasterOS](/images/projects/white/pixelos_white.png)</>
+  </Card>
+  <Card image arrow title="DevOps Track" href="/projects/devops">
+    <>![Devops](/images/projects/white/devops_white.png)</>
+  </Card>
+
+  <Card image arrow title="Sahl" href="/projects/sahl">
+    <>![sahl](/images/projects/white/sahl_white.png)</>
+  </Card>
+   <Card image arrow title="Interpreted" href="/projects/interpreted">
+    <>![interpreted](/images/projects/white/interpreted_white.png)</>
+  </Card>
+   <Card image arrow title="BF Portal" href="/projects/bf-portal-community">
+    <>![bfportal](/images/projects/white/bfportal_white.png)</>
+  </Card>
+  
 </Cards>
