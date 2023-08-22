@@ -1,3 +1,5 @@
+import Chip from '../../components/Chip'
+
 # Box CLI Maker 
 
 Make Highly Customized Boxes for CLI
@@ -10,4 +12,90 @@ Swastik is an open-source contributor, The V Programming Language developer, FOS
 
 ## Project Tasks
 
-TBA
+
+### Enhance `README.md` 
+
+<Chip level={'Easy'} url={"https://github.com/Delta456/box-cli-maker/issues/38"} />
+**Description**
+
+I have written a README which people don't bother reading because of its complexity, and the screenshots can be showcased in a better way.
+
+---
+### Add more examples
+
+<Chip level={'Easy'} url={"https://github.com/Delta456/box-cli-maker/issues/37"} />
+**Description**
+
+I have added many examples in examples/, but more examples you think should be added are welcome!
+
+---
+
+### Update dependencies
+
+<Chip level={'Easy'} url={"https://github.com/Delta456/box-cli-maker/issues/33"} />
+**Description**
+
+Dependencies have been outdated for a long time, so they need to be updated to the latest version.
+
+To know where to start updating look at [go.mod](https://github.com/Delta456/box-cli-maker/blob/master/go.mod).
+
+---
+
+### Remove `errorMsg` and replace it with `err` type
+
+<Chip level={'Hard'} url={"https://github.com/Delta456/box-cli-maker/issues/36"} />
+**Description**
+
+There is a function `errorMsg` which prints to the `stderr` stream when there is an error. In production open must never print to `stderr` because it may conflict with other things present in the product, and can cause debugging to become very hard.
+
+For example, the below code can be turned into:
+```go
+// roundOffTitleColor rounds off 24 bit Color to the terminals maximum color capacity for Title.
+func (b Box) roundOffTitleColor(col color.RGBColor, title string) string {
+	switch detectTerminalColor() {
+	case terminfo.ColorLevelNone:
+		errorMsg("[warning]: terminal does not support colors, using no effects")
+		return title
+	case terminfo.ColorLevelMillions:
+		return col.Sprint(title)
+	default:
+		return col.C256().Sprint(title)
+	}
+}
+```
+```go
+// roundOffTitleColor rounds off 24 bit Color to the terminals maximum color capacity for Title.
+func (b Box) roundOffTitleColor(col color.RGBColor, title string) (string, err) {
+	switch detectTerminalColor() {
+	case terminfo.ColorLevelNone:
+		return title, errors.New("terminal does not support colors")
+	case terminfo.ColorLevelMillions:
+		return col.Sprint(title), nil
+	default:
+		return col.C256().Sprint(title), nil
+	}
+}
+```
+then, do the changes as per the need. This is a very breaking change so this has to be some with cautious.
+
+---
+### Use switch case for checking the type of `Color`
+
+<Chip level={'Medium'} url={"https://github.com/Delta456/box-cli-maker/issues/35"} />
+**Description**
+
+There are a lot of if conditions for checking the type of `Color` which makes it very hard to read and debug. A switch case will improve readability and help to debug much better.
+
+For example box.go#L192 is long, and with a switch case, it can be done much more efficiently.
+
+---
+### Use termenv to detect color profile of terminals
+
+<Chip level={'Medium'} url={"https://github.com/Delta456/box-cli-maker/issues/34"} />
+**Description**
+
+There is a lot of colour detection used in the library that can be removed, and [muesli/termenv](https://github.com/muesli/termenv) can be used to which will reduce the number of lines of code and boilerplate.
+
+One will have to study all the `detect_platform` files to understand how colour profile checking by the module manually.
+
+---
