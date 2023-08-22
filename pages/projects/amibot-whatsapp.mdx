@@ -1,3 +1,5 @@
+import Chip from '../../components/Chip'
+
 # Amibot WhatsApp: Your Personal Amizone Assistant
 
 Tired of slow and unreliable access to your Amity University student portal? Introducing Amibot, the chat bot that allows you to easily access all your important information on WhatsApp. With Amibot, you can quickly view your grades, attendance, class schedule, and more without ever having to log in to the Amizone website.
@@ -12,39 +14,40 @@ Tushar Malik is a polygot programmer with experience in TypeScript, Python, Rust
 
 ### Add additional buttons to check attendance+schedule for the current/previous day
 
-Issue: https://github.com/asetalias/amibot/issues/47
-Level: Easy
+<Chip level={'Easy'} url={"https://github.com/asetalias/amibot/issues/47"} />
 
-#### Problem
+**Problem**
 
 Checking attendance and class schedule for the current and previous day is the most commonly used flow in the bot for most users, as it is for me. However, this flow currently requires at least 4 button clicks and waiting for 2 bot responses. Suboptimal!
 Proposed Solution
 Add extra buttons just to trigger these flows. Essentially:
 ![diagram](https://user-images.githubusercontent.com/72784348/261934128-a47db851-350e-4862-aec7-c3557c7486ee.png)
 
+---
+
 ### Add slash commands as an alternative way to interact with amibot
 
-Issue: https://github.com/asetalias/amibot/issues/46
-Level: Hard
+<Chip level={'Hard'} url={"https://github.com/asetalias/amibot/issues/46"} />
 
-#### The Problem
+**The Problem**
 
 Buttons are cool and user friendly, but sometimes less than efficient for frequently used flows.
 
-#### Proposed Solution
+**Proposed Solution**
 
 Slash commands can be a cool alternative to interact with the bot and condense multiple button clicks into a single command.
 
+---
+
 ### [Feature] Encrypt user credentials at rest
 
-Issue: https://github.com/asetalias/amibot/issues/41
-Level: Medium
+<Chip level={'Medium'} url={"https://github.com/asetalias/amibot/issues/41"} />
 
-#### Problem
+**Problem**
 
 We're storing user credentials in plain-text. This is less than ideal as a database breach would render them exposed.
 
-#### Solution
+**Solution**
 
 Encrypt these credentials while storing, decrypt them while using. A secure symmetric algorithm like AES-256 should suffice.
 Reference: https://github.com/asetalias/amibot/discussions/35
