@@ -21,9 +21,3 @@ To get started with the ASoC website locally, follow these steps:
 5. Open your browser and visit `http://localhost:3000` to view the website.
 
 For more information visit the [Nextra documentation](https://nextra.site/docs/).
-
-> **Warning**: Currently, the ASoC website hosted on Vercel is connected to the [vyogami/asoc](https://github.com/vyogami/asoc) repository. Please note that due to Vercel's limitations, the free plan does not support connecting to a GitHub organization repository. Therefore, to see your changes reflected on the official ASoC website at [asoc.asetalias.in](https://asoc.asetalias.in), you need to push your changes to the [vyogami/asoc](https://github.com/vyogami/asoc)..
-
-> **Note**: If you prefer to use GitHub Pages for hosting your changes, we encourage you to create pull requests without hesitation. Your contributions are highly valued and will be promptly reviewed.
-
-**Additional Information:** We are actively working on a proposal to sponsor an ALiAS Vercel account, which would allow us to connect the website directly to the ALiAS GitHub organization repository
