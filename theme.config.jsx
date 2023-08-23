@@ -92,7 +92,7 @@ export default {
   banner: {
     key: 'register-for-asoc-2023',
     text: (
-      <a href="mentees">
+      <a href="/mentees">
         🎉 Register as mentee →
       </a>
     )
