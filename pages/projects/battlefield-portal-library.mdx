@@ -1,0 +1,143 @@
+# Battlefield Portal Community
+
+A Community that loves Battlefield portal, and create tools and utilities around it.
+We have over 17k users on website and 2k users in discord.
+
+We also have many projects available to contribute to.
+
+The organization uses python for most of the projects so some familiarly with the language will help.
+
+Organization repository: https://github.com/battlefield-portal-community
+
+## About the Mentors
+
+[Vibhakar](https://github.com/p0lygun) is a passionate full stack developer, learning data science and AI these days. He loves to work with backend technologies and is an avid supporter of open source software.
+
+Connect with him at
+
+<a href="https://www.linkedin.com/in/vibhakarsolanki" target="blank_">
+  <img
+    src="https://img.shields.io/badge/LinkedIn-black?style=for-the-badge&logo=linkedin"
+    style={{ display: "inline" }}
+  ></img>
+</a>
+<a href="https://github.com/p0lygun" target="blank_">
+  <img
+    src="https://img.shields.io/badge/GitHub-black?style=for-the-badge&logo=github"
+    style={{ display: "inline" }}
+  ></img>
+</a>
+## Projects Available
+
+    - ### [Portal Library](https://gh.bfportal.gg/)
+        - A PaaS that allows players to share custom game modes created in Battlefield Portal
+        - #### Tasks Available
+            1. ##### Fix Burger menu state on mobile &nbsp;&nbsp;<img style={{'display': 'inline'}} src="https://img.shields.io/badge/EASY-147a2f"></img>&nbsp;<img style={{'display': 'inline'}} src="https://img.shields.io/badge/Frontend-purple"></img>
+                - Issue Tracker - [#211](https://github.com/battlefield-portal-community/bfportal.gg/issues/211)
+                - On mobile devices the backdrop does not hide itself after the "Burger Menu" is closed.
+                - <details>
+                    <summary>States</summary>
+                    - Open
+                    - ![Open State](https://user-images.githubusercontent.com/22869882/262425605-d066a932-170b-4c5f-b0a8-4bf27ff3ef1c.png)
+                    - Error
+                    - ![Error state](https://user-images.githubusercontent.com/22869882/262425605-d066a932-170b-4c5f-b0a8-4bf27ff3ef1c.png)
+                    </details>
+                - The backdrop must hide itself when the menu is closed.
+            2. ##### All images must have good alt attribute &nbsp;&nbsp;<img style={{'display': 'inline'}} src="https://img.shields.io/badge/EASY-147a2f"></img>&nbsp;<img style={{'display': 'inline'}} src="https://img.shields.io/badge/Frontend-purple"></img>
+                - Issue tracker - [#171](https://github.com/battlefield-portal-community/bfportal.gg/issues/171)
+
+                As the website is in the process to be compliant of [WCAG 2](https://www.w3.org/WAI/standards-guidelines/wcag/) Standard, We must make sure all the images have good descriptive `alt` attribute in `img` tags
+
+                This task has two parts which will determine the overall scope of the task.
+                - populating `alt` attribute of existing `img` tags.
+                - Writing a [pre-commit](https://pre-commit.com/) hook that makes sure all the `img` tags in a change have good `alt` attribute
+                    - If you wish to do this too please open a new [issue](https://github.com/battlefield-portal-community/bfportal.gg/issues/new), then this task will be moved to <img style={{'display': 'inline'}} src="https://img.shields.io/badge/MEDIUM-918719"></img>
+            3. ##### Create and design template for login cancelled page &nbsp;&nbsp; <img style={{'display': 'inline'}} src="https://img.shields.io/badge/EASY-147a2f"></img>&nbsp;<img style={{'display': 'inline'}} src="https://img.shields.io/badge/Frontend-purple"></img>&nbsp;<img style={{'display': 'inline'}} src="https://img.shields.io/badge/Backend-maroon"></img>
+                - Issue Tracker - [#168](https://github.com/battlefield-portal-community/bfportal.gg/issues/168)
+
+                Currently if a user cancels the login flow or the flow becomes corrupt, we show a bare bones html template.
+                ![Login cancelled html template](https://user-images.githubusercontent.com/22869882/262429749-e7daa573-f5a4-49a4-a8ca-b24bc28174ce.png)
+
+                In this task you will
+                    - Design and create the UI in figma (link to org's figma will be provided).
+                    - Implement the mock design in a template.
+            4. ##### Remove &nbsp;`Waypoint.infinite`&nbsp; and use custom implementation &nbsp;&nbsp; <img style={{'display': 'inline'}} src="https://img.shields.io/badge/MEDIUM-918719"></img>&nbsp;<img style={{'display': 'inline'}} src="https://img.shields.io/badge/Frontend-purple"></img>
+                - Issue Tracker - [#129](https://github.com/battlefield-portal-community/bfportal.gg/issues/129)
+
+                Currently to achieve infinite scroll in various places the project uses `Waypoint` library, but the current implementation break a lot (especially on firefox),
+                in this task you will
+                - Identify all the places where infinite scroll is required
+                - Create a custom js library (or use a better one) to achieve the infinite scroll on all places required
+            5. ##### Add a "More from Creator section" to Experience Page &nbsp;&nbsp; <img style={{'display': 'inline'}} src="https://img.shields.io/badge/MEDIUM-918719"></img>&nbsp;<img style={{'display': 'inline'}} src="https://img.shields.io/badge/Frontend-purple"></img>&nbsp;<img style={{'display': 'inline'}} src="https://img.shields.io/badge/Backend-maroon"></img>
+                - Issue Tracker - [#152](https://github.com/battlefield-portal-community/bfportal.gg/issues/152)
+
+                In the community many people have create more than one Experience and it would be awesome if you could showcase some of the Experiences created by the user on the Experience Page
+
+                The Experiences created by the same user must be displayed at the bottom of the page.
+            6. ##### Add Cache headers for Cloudflare to consume &nbsp;&nbsp; <img style={{'display': 'inline'}} src="https://img.shields.io/badge/MEDIUM-918719"></img>&nbsp;<img style={{'display': 'inline'}} src="https://img.shields.io/badge/Backend-maroon"></img>
+                Cloudflare provides free caching service to all users, but Currently we are not making use of it on the Frontend,
+                this leads to more requests at server and more cpu cycles.
+
+                we can add caching to Frontend by making use of the `Cache-Control` http header.
+                In this task you will
+                - Identify all the points where we can use Cache
+                - Think of an efficient way to add headers for all points
+                - Set cache age accordingly
+            7. ##### Add &nbsp;`Variants`&nbsp; to Experience Model &nbsp;&nbsp; <img style={{'display': 'inline'}} src="https://img.shields.io/badge/HARD-bd1c1c"></img>&nbsp;<img style={{'display': 'inline'}} src="https://img.shields.io/badge/Frontend-purple"></img>&nbsp;<img style={{'display': 'inline'}} src="https://img.shields.io/badge/Backend-maroon"></img>
+                - Issue Tracker - [#108](https://github.com/battlefield-portal-community/bfportal.gg/issues/108)
+
+                A creator of a custom game mode almost always wants to publish their game mode on different settings as many players prefer to play a game mode on different "eras",
+                So Currently the user submits many experiences which are essentially the same with some different settings, this leads to the home page becoming very cluttered.
+                So we are looking add "Variants" of a experiences that the user can add and they wont be show on the page by default.
+
+                This task has major feature addition on both backend and frontend,
+                - Frontend
+                    - Design or use the current decided UI to display that a experience has Variants
+                    - Think of a good way to show variants.
+                    - Come up with a workflow to submit/mark experiences as variants.
+                - Backend
+                    - Create a relationship between the main and variant experience.
+                    - Update the form builder accordingly.
+                    - add a way to manage already existing experiences.
+            8. ##### Migrate to  &nbsp;`AbstractUser` &nbsp;&nbsp; <img style={{'display': 'inline'}} src="https://img.shields.io/badge/HARD-bd1c1c"></img>&nbsp;<img style={{'display': 'inline'}} src="https://img.shields.io/badge/Backend-maroon"></img>
+                When I started this project I made a grave mistake of using default user model for everything, fast forward to today we maintain two models `Users` and `Profiles` which ideally should be one.
+                In this task we will have to migrate every user to an CustomUser model that subclasses from `AbstractUser`.
+                Tasks
+                - Identify and replace every direct usage of `User` model with `get_user_model`.
+                - Create a new Custom user and define a relationship with `Profile` model.
+                - Write migrate strategy to migrate all current users to the `AbstractUser` model
+
+                **This is the basic overview of the task, a much detailed discussion must take place before starting with task.**
+            9. ##### Add an Experience logic backup service &nbsp;&nbsp; <img style={{'display': 'inline'}} src="https://img.shields.io/badge/HARD-bd1c1c"></img>&nbsp;<img style={{'display': 'inline'}} src="https://img.shields.io/badge/Backend-maroon"></img>
+                Each experience has two things a `Share Code` and a `PlaygroundID`, if a user provides their `PlaygroundID` we can retrieve all information about the experience using [gametools api](https://api.gametools.network/docs),
+
+                Task: create a system or api where a user can provide `PlaygroundID` and we save the playground info and give them back a unique URL using which the user can later retrieve the info
+
+                **This is the basic overview of the task, a much detailed discussion must take place before starting with task.**
+            10. ##### Create a per-branch deployment system &nbsp;&nbsp; <img style={{'display': 'inline'}} src="https://img.shields.io/badge/DEATH-black"></img>&nbsp;<img style={{'display': 'inline'}} src="https://img.shields.io/badge/Backend-maroon"></img>
+                Just like how vercel auto deploys feature branch on subdomains, it would be nice to have a system same as that in our project too.
+
+                **This is the basic overview of the task, a much detailed discussion must take place before starting with task.**
+
+            - <details>
+                <summary>Propose your own idea</summary>
+                &nbsp;&nbsp;
+                If you have some idea that you think is worth adding to the project, go ahead and create a new issue at [project repo](https://gh.bfportal.gg)
+                </details>
+
+        - <details>
+            <summary>Tech Stack (django based)</summary>
+
+            - Backend
+                - Wagtail (A django based CMS)
+                - PostgreSQL
+                - DiscordAPI
+            - Frontend
+                - TailwindCSS
+                - JQuery
+            - DevOps
+                - Github Actions
+                - Docker
+                - Portainer
+                - Nginx
+            </details>
