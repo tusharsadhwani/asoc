@@ -215,24 +215,6 @@ Instead of that, emulating a Python stack, and printing a traceback of that woul
 
 ### **Language feature: file I/O with `open()`**
 
-The current interpreter can't interact with the file system, but implementing `open` will solve that.
-
-Support for reading, writing and appending to files will be needed.
-
-```python
-file = open('foo.txt')
-contents = file.read()
-print(contents)
-file.close()
-
-file = open('bar.txt', 'w')
-chars = file.write(contents)
-print("Wrote", chars, "chars")
-file.close()
-```
-
-### **Language feature: file I/O with `open()`**
-
 Issue: https://github.com/tusharsadhwani/interpreted/issues/10
 
 The current interpreter can't interact with the file system, but implementing `open` will solve that.
